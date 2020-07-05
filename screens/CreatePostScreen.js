@@ -5,7 +5,6 @@ import { Button, TextInput, Text, View } from 'react-native';
 function CreatePostScreen({ navigation, route }) {
 
   const [postText, setPostText] = useState('');
-  console.log(postText)
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <TextInput

@@ -40,9 +40,10 @@ function HomeStackScreen({ navigation }) {
 }
 
 function ShowGameInfoStackScreen({ navigation, route }) {
-  console.log(route, "ghg")
+
+  console.log(route.params, "ghg")
   return (
-    <ShowGameInfoStack.Navigator screenOptions={{
+    <ShowGameInfoStack.Navigator  screenOptions={{
       headerStyle: {
         backgroundColor: '#1b1c23',
       },
@@ -51,12 +52,12 @@ function ShowGameInfoStackScreen({ navigation, route }) {
         fontWeight: 'bold',
       },
     }}>
-      <ShowGameInfoStack.Screen name='ShowGameInfo' component={ShowGameInfo} options={{
-        headerLeft: () => (
-          <Icon.Button name='ios-menu' size={25}
-            backgroundColor='#1b1c23'
-            onPress={() => navigation.openDrawer()}
-          ></Icon.Button>)
+      <ShowGameInfoStack.Screen name='ShowGameInfo' component={() => ShowGameInfo({navigation, route})} options={{
+        // headerLeft: () => (
+          // <Icon.Button name='ios-menu' size={25}
+          //   backgroundColor='#1b1c23'
+          //   onPress={() => navigation.openDrawer()}
+          // ></Icon.Button>)
       }} />
     </ShowGameInfoStack.Navigator>
   )

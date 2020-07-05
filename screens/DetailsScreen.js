@@ -24,7 +24,6 @@ function Item({ title, name, format, image, onPress }) {
 }
 
 function DetailsScreen({ navigation, route }) {
-  console.log(navigation);
 
   const [matches, setMatches] = useState(null)
 
@@ -39,7 +38,7 @@ function DetailsScreen({ navigation, route }) {
       <SafeAreaView style={styles.container}>
         <FlatList
           data={matches}
-          renderItem={({ item, index }) => <Item title={item.AreaName} onPress={() => navigation.navigate("ShowGameInfo", { matchId: 1 })} name={item.Name} format={item.Format} image={images[index]} />}
+          renderItem={({ item, index }) => <Item title={item.AreaName} onPress={() => navigation.navigate({name: "ShowGameInfo", params:{matchId: 1} })} name={item.Name} format={item.Format} image={images[index]} />}
           keyExtractor={(item, index) => index.toString()}
         />
       </SafeAreaView>
