@@ -52,15 +52,13 @@ function ShowGameInfoStackScreen({ navigation, route }) {
         fontWeight: 'bold',
       },
     }}>
-      <ShowGameInfoStack.Screen name='ShowGameInfo' options={{
+      <ShowGameInfoStack.Screen name='ShowGameInfo' component={() => ShowGameInfo({navigation, route})} options={{
         // headerLeft: () => (
           // <Icon.Button name='ios-menu' size={25}
           //   backgroundColor='#1b1c23'
           //   onPress={() => navigation.openDrawer()}
           // ></Icon.Button>)
-      }} >
-          {() => ShowGameInfo({navigation, route})}
-      </ShowGameInfoStack.Screen>
+      }} />
     </ShowGameInfoStack.Navigator>
   )
 }
