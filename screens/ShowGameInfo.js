@@ -5,10 +5,10 @@ import { Button, TextInput, TouchableOpacity, Text, View } from 'react-native';
 function ShowGameInfo(props) {
 
   const [postText, setPostText] = useState('');
-  console.log(props)
+  console.log(props.route.params.matchId)
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Show</Text>
+      <Text>{props.route.params.matchId}</Text>
       <Button
         title='Done'
         onPress={() => {
